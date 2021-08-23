@@ -47,7 +47,14 @@ const ContactState = (props) => {
 
   // Setup Actions
 
-  // --- Add Contact
+  const addContact = (contact) => {
+    // uuid will add a random id to the contact that was submitted in the contact form since
+    // at the moment we are not using the api yet.
+    contact.id = uuid.v4();
+
+    // Then we dispatch the contact
+    dispatch({ type: ADD_CONTACT, payload: contact });
+  };
 
   // --- Delete Contact
 
