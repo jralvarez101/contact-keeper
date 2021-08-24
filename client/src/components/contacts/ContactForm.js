@@ -4,7 +4,6 @@ import ContactContext from "../../context/contact/contactContext";
 function ContactForm() {
   // initialize context to change the state of the contact Context so we can add contact
   const contactContext = useContext(ContactContext);
-  console.log(contactContext);
 
   // local state for form
   const [contact, setContact] = useState({

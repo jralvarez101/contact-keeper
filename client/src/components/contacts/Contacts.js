@@ -7,7 +7,6 @@ function Contacts() {
 
   // We can now use the contacts from the ContactState
   const { contacts } = contactContext;
-  console.log(contacts);
   return (
     <Fragment>
       {contacts.map((contact) => (

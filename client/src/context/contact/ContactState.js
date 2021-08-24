@@ -39,14 +39,14 @@ const ContactState = (props) => {
         type: "professional",
       },
     ],
+    current: null,
   };
 
   // State allows us to access the sate and dispatch allows us to dispatch to our reducer
 
   const [state, dispatch] = useReducer(contactReducer, initialState);
 
-  // Setup Actions
-
+  // Add Contact
   const addContact = (contact) => {
     // uuid will add a random id to the contact that was submitted in the contact form since
     // at the moment we are not using the api yet.
@@ -57,13 +57,20 @@ const ContactState = (props) => {
     dispatch({ type: ADD_CONTACT, payload: contact });
   };
 
+  // Delete Contact
   const deleteContact = (id) => {
     dispatch({ type: DELETE_CONTACT, payload: id });
   };
 
-  // --- Set Current Contact
+  // Set Current Contact
+  const setCurrent = (contact) => {
+    dispatch({ type: SET_CURRENT, payload: contact });
+  };
 
   // --- Clear Current Contact
+  const clearCurrent = () => {
+    dispatch({ type: CLEAR_CURRENT });
+  };
 
   // --- Update Contact
 
@@ -76,8 +83,11 @@ const ContactState = (props) => {
     <ContactContext.Provider
       value={{
         contacts: state.contacts,
+        current: state.current,
         addContact,
         deleteContact,
+        setCurrent,
+        clearCurrent,
       }}
     >
       {props.children}
