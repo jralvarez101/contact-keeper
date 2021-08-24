@@ -4,6 +4,7 @@ import ContactContext from "../../context/contact/contactContext";
 function ContactForm() {
   // initialize context to change the state of the contact Context so we can add contact
   const contactContext = useContext(ContactContext);
+  console.log(contactContext);
 
   // local state for form
   const [contact, setContact] = useState({
@@ -64,6 +65,7 @@ function ContactForm() {
         type="radio"
         name="type"
         value="personal"
+        onChange={onChange}
         defaultChecked={type === "personal"}
       />
       Personal{""}
@@ -71,6 +73,7 @@ function ContactForm() {
         type="radio"
         name="type"
         value="professional"
+        onChange={onChange}
         defaultChecked={type === "professional"}
       />
       Professional
