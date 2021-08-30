@@ -44,6 +44,8 @@ router.post(
         password,
       });
 
+      console.log(user);
+
       // next we must encrypt (hash) the password with bcryptjs
       const salt = await bcrypt.genSalt(10);
 
