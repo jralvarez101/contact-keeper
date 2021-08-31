@@ -22,7 +22,7 @@ function Contacts() {
           ? filtered.map((contact) => (
               <CSSTransition
                 nodeRef={nodeRef}
-                key={contact.id}
+                key={contact._id}
                 timeout={500}
                 classNames="item"
               >
@@ -32,7 +32,7 @@ function Contacts() {
           : contacts.map((contact) => (
               <CSSTransition
                 nodeRef={nodeRef}
-                key={contact.id}
+                key={contact._id}
                 timeout={500}
                 classNames="item"
               >
