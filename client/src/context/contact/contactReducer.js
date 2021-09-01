@@ -8,6 +8,7 @@ import {
   FILTER_CONTACTS,
   CLEAR_FILTER,
   CONTACT_ERROR,
+  CLEAR_CONTACTS,
 } from "../types";
 
 /* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
@@ -40,6 +41,14 @@ export default (state, action) => {
           (contact) => contact.id !== action.payload
         ),
         loading: false,
+      };
+    case CLEAR_CONTACTS:
+      return {
+        ...state,
+        contacts: null,
+        current: null,
+        filtered: null,
+        error: null,
       };
     case SET_CURRENT:
       return {
