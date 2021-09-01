@@ -10,11 +10,11 @@ export const ContactItem = ({ contact }) => {
   // Pull deleteContact function from contactContext
   const { deleteContact, setCurrent, clearCurrent } = contactContext;
 
-  const { id, name, email, phone, type } = contact;
+  const { _id, name, email, phone, type } = contact;
 
   const onDelete = () => {
     // we have access to the id that we are pulling out from contact.
-    deleteContact(id);
+    deleteContact(_id);
     clearCurrent();
   };
   return (
